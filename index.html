@@ -10,23 +10,30 @@
     <!-- project styles -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body class="bg-primary">
+  <body class="">
     <div id="app">
-      <h1>Hello!</h1>
-      <button id="buttonOne">1</button>
-      <button id="buttonTwo">2</button>
-      <button id="buttonThree">3</button>
-      <br>
-      <button id="buttonFour">4</button>
-      <button id="buttonFive">5</button>
-      <button id="buttonSix">6</button>
-      <br>
-      <button id="buttonSeven">7</button>
-      <button id="buttonEight">8</button>
-      <button id="buttonNine">9</button>
-      <br>
-      <button id="reset">RESET</button>
-      <p id="message"></p>
+      <h1>TIC-TAC-TOE</h1>
+      <div class="container">
+        <div id="first-row" class="d-flex row justify-content-center vw-75">
+          <div id="buttonOne" class="button col-2"></div>
+          <div id="buttonTwo" class="button col-2"></div>
+          <div id="buttonThree" class="button col-2"></div>
+        </div>
+        <div id="second-row" class="d-flex row justify-content-center vw-75">
+          <div id="buttonFour" class="button col-2"></div>
+          <div id="buttonFive" class="button col-2"></div>
+          <div id="buttonSix" class="button col-2"></div>
+        </div>
+        <div id="third-row" class="d-flex row justify-content-center vw-75">
+          <div id="buttonSeven" class="button col-2"></div>
+          <div id="buttonEight" class="button col-2"></div>
+          <div id="buttonNine" class="button col-2"></div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center vw-75 p-0">
+        <p id="reset">CLICK HERE TO RESET</p>
+      </div>
+      <p id="message">X's Turn</p>
     </div>
 
     <!-- BootStrap JavaScript -->
