@@ -117,20 +117,17 @@ h1 {
   text-align: center;
   height: 10vh;
   line-height: 10vh;
-  font-size: 10vh;
+  font-size: min(max(10vw), 10vh);
   font-weight: bold;
 }
 
 .button:hover {
   cursor: pointer;
+  background-color: red;
 }
 
 .button {
   font-weight: bold;
-}
-
-.button:hover {
-  background-color: red;
 }
 
 .button:active {
