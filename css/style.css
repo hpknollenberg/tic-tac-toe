@@ -2,6 +2,7 @@ h1 {
   text-align: center;
   font-size: min(max(10vw), 10vh);
   margin-bottom: 2.5vh;
+  text-shadow: 2.5px 2.5px rgba(255, 105, 180, 0.5);
 }
 
 #buttonOne {
@@ -102,7 +103,7 @@ h1 {
   font-weight: bold;
   margin: 10px;
   padding: 10px;
-  text-shadow: 1px 1px grey;
+  text-shadow: 1px 1px rgba(255, 105, 180, 0.5);
   font-size: 1rem;
   margin-top: 2.5vh;
 }
@@ -119,6 +120,7 @@ h1 {
   line-height: 10vh;
   font-size: 5vw;
   font-weight: bold;
+  text-shadow: 2.5px 2.5px rgba(255, 105, 180, 0.5);
 }
 
 .button:hover {
