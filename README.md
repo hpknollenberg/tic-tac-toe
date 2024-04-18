@@ -10,5 +10,6 @@ A repo template built with Vite.
 * $ npm install
 * $ npm run dev
 
-
-
+## To Deploy
+* $ npm run build
+* then add, commit, and push
