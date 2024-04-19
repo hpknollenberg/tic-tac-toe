@@ -44,15 +44,15 @@ document.getElementById("o-player").addEventListener("input", (e) => {
 
 
 document.getElementById("buttonOne").addEventListener("click", () => {//When button is clicked...
-    if (turnX === true) {
-        if (oneX === false && oneO === false) {
-            oneX = display(oneX, "buttonOne");
-            checkX();
+    if (turnX === true) { //If X's turn
+        if (oneX === false && oneO === false) { //If button hasn't been clicked
+            oneX = display(oneX, "buttonOne"); //Run display function
+            checkX(); //Check for a game over
         }
-    } else {
-        if (oneX === false && oneO === false) {
-            oneO = display(oneO, "buttonOne");
-            checkO();
+    } else { //If O's turn
+        if (oneX === false && oneO === false) { //If button hasn't been clicked
+            oneO = display(oneO, "buttonOne"); //Run display function
+            checkO(); //Check for a game over
         }
     }  
 })
@@ -172,27 +172,27 @@ document.getElementById("buttonNine").addEventListener("click", () => {//When bu
 
 
 function display(button, id) {
-    if (gameOver !== true) {
-        if (turnX === true) { //X
+    if (gameOver !== true) { //If game is not over
+        if (turnX === true) { //If X's turn
             document.getElementById(`${id}`).innerHTML = "X";//display X
-            turnX = false;
-            displayNameO();
-            return true;
-        } else {
-            document.getElementById(`${id}`).innerHTML = "O";//display X
-            turnX = true;
-            displayNameX();
-            return true;
+            turnX = false; //Change turn
+            displayNameO(); //Run displayNameO function
+            return true; //Change X button to true (Or "as clicked")
+        } else { //If O's turn
+            document.getElementById(`${id}`).innerHTML = "O";//display O
+            turnX = true; //Change turn
+            displayNameX(); //Run displayNameF function
+            return true; //Change O button to true (Or "as clicked")
         }   
     } 
 }
 
 
 function displayNameO() {
-    if (nameO !== "") {
-        document.getElementById("message").innerHTML = `${nameO}'s Turn (O)`
-    } else {
-        document.getElementById("message").innerHTML = "O's Turn";
+    if (nameO !== "") { //If input is not blank
+        document.getElementById("message").innerHTML = `${nameO}'s Turn (O)` //Display Name's Turn (O)
+    } else { //If input is blank
+        document.getElementById("message").innerHTML = "O's Turn"; //Display O's Turn
     }
 }
 
@@ -205,8 +205,8 @@ function displayNameX() {
 }
 
 
-function checkX() {
-    let winXOne = (oneX && twoX && threeX);
+function checkX() { //Check function
+    let winXOne = (oneX && twoX && threeX); //Set variables for possible win conditions
     let winXTwo = (fourX && fiveX && sixX);
     let winXThree = (sevenX && eightX && nineX);
     let winXFour = (oneX && fourX && sevenX);
@@ -215,7 +215,7 @@ function checkX() {
     let winXSeven = (oneX && fiveX && nineX);
     let winXEight = (threeX && fiveX && sevenX);
     
-    if (winXOne === true ||
+    if (winXOne === true || //Check if any of the win conditions are true
         winXTwo === true ||
         winXThree === true ||
         winXFour === true ||
@@ -225,15 +225,15 @@ function checkX() {
         winXEight === true) {
         winX = true;
     }
-    if (winX === true) {
-        if (nameX !== "") {
-            document.getElementById("message").innerHTML = `${nameX.toUpperCase()} WINS`
-        } else {
-            document.getElementById("message").innerHTML = "X WINS";
+    if (winX === true) { //If a win condition is true
+        if (nameX !== "") { //If entered name
+            document.getElementById("message").innerHTML = `${nameX.toUpperCase()} WINS` //Display NAME WINS
+        } else { //If no name
+            document.getElementById("message").innerHTML = "X WINS"; //Display X WINS
         }
-        gameOver = true;
-    } else {
-        checkDraw();
+        gameOver = true; //Set gameOver to true
+    } else { //If a win condition is not true
+        checkDraw(); //run check draw function
     }
 } 
 
@@ -272,7 +272,7 @@ function checkO() {
 
 
 function checkDraw() {
-    if ((oneX || oneO) &&
+    if ((oneX || oneO) && //If every button has been clicked
         (twoX || twoO) &&
         (threeX || threeO) &&
         (fourX || fourO) &&
@@ -281,20 +281,20 @@ function checkDraw() {
         (sevenX || sevenO) &&
         (eightX || eightO) &&
         (nineX || nineO)) {
-        draw = true;
+        draw = true; //set draw to true
     }
 
-    if (draw === true) {
-        document.getElementById("message").innerHTML = "DRAW";
-        gameOver = true;
+    if (draw === true) { //If draw true
+        document.getElementById("message").innerHTML = "DRAW"; //Display DRAW
+        gameOver = true; //set gameover to true
     }
 }
 
 
-document.getElementById("reset").addEventListener("click", reset);
+document.getElementById("reset").addEventListener("click", reset); //RESET BUTTON
 
 function reset () {
-    oneX = false;
+    oneX = false; //Set all the button boolean values back to false
     twoX = false;
     threeX = false;
     fourX = false;
@@ -322,30 +322,30 @@ function reset () {
     gameOver = false;
 
 
-    document.getElementById(`buttonOne`).innerHTML = "";//display X
-    document.getElementById(`buttonTwo`).innerHTML = "";//display X
-    document.getElementById(`buttonThree`).innerHTML = "";//display X
-    document.getElementById(`buttonFour`).innerHTML = "";//display X
-    document.getElementById(`buttonFive`).innerHTML = "";//display X
-    document.getElementById(`buttonSix`).innerHTML = "";//display X
-    document.getElementById(`buttonSeven`).innerHTML = "";//display X
-    document.getElementById(`buttonEight`).innerHTML = "";//display X
-    document.getElementById(`buttonNine`).innerHTML = "";//display X
+    document.getElementById(`buttonOne`).innerHTML = "";//set the button display back to blank
+    document.getElementById(`buttonTwo`).innerHTML = "";
+    document.getElementById(`buttonThree`).innerHTML = "";
+    document.getElementById(`buttonFour`).innerHTML = "";
+    document.getElementById(`buttonFive`).innerHTML = "";
+    document.getElementById(`buttonSix`).innerHTML = "";
+    document.getElementById(`buttonSeven`).innerHTML = "";
+    document.getElementById(`buttonEight`).innerHTML = "";
+    document.getElementById(`buttonNine`).innerHTML = "";
 
-    displayNameX();
+    displayNameX(); //Display that it is X's turn
 }
 
 
 
-let styleCounter = 0;
+let styleCounter = 0; 
 
 document.getElementById("style").addEventListener("click", style);
 
 function style() {
     styleCounter++;
 
-    if (styleCounter === 5) {
-        styleCounter = 0;
+    if (styleCounter === 5) { //5 possible styles
+        styleCounter = 0; //Go back to beginning
     }
 
     switch(styleCounter) {
