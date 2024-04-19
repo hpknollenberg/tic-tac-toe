@@ -32,7 +32,9 @@ let nameO = "";
 
 document.getElementById("x-player").addEventListener("input", (e) => {
     nameX = e.target.value;
-    displayNameX();
+    if (gameOver !== true) {
+        displayNameX();
+    }
 })
 
 document.getElementById("o-player").addEventListener("input", (e) => {
@@ -331,4 +333,69 @@ function reset () {
     document.getElementById(`buttonNine`).innerHTML = "";//display X
 
     displayNameX();
+}
+
+
+
+let styleCounter = 0;
+
+document.getElementById("style").addEventListener("click", style);
+
+function style() {
+    styleCounter++;
+
+    if (styleCounter === 5) {
+        styleCounter = 0;
+    }
+
+    switch(styleCounter) {
+        case 0: 
+            document.getElementById("app").style.backgroundColor = "rgba(0, 255, 247, 0.5)";
+            document.getElementById("app").style.boxShadow = "10px 10px 10px rgba(255, 105, 180, 0.5)";
+            document.getElementById("app").style.borderColor = "rgba(255, 105, 180, 0.5)";
+            document.querySelector('h1').style.textShadow = "2.5px 2.5px rgba(255, 105, 180, 0.5)";
+            document.querySelector('#message').style.textShadow = "2.5px 2.5px rgba(255, 105, 180, 0.5)";
+            document.querySelector('#reset').style.textShadow = "1px 1px rgba(255, 105, 180, 0.5)";
+            document.querySelector('#style').style.textShadow = "1px 1px rgba(255, 105, 180, 0.5)";
+            document.getElementById("app").style.backgroundImage = "none";
+            break;
+        case 1:
+            document.getElementById("app").style.backgroundColor = "rgba(255, 105, 180, 0.5)";
+            document.getElementById("app").style.boxShadow = "10px 10px 10px rgba(0, 255, 247, 0.5)";
+            document.getElementById("app").style.borderColor = "rgba(0, 255, 247, 0.5)";
+            document.querySelector('h1').style.textShadow = "2.5px 2.5px rgba(0, 255, 247, 0.5)";
+            document.querySelector('#message').style.textShadow = "2.5px 2.5px rgba(0, 255, 247, 0.5)";
+            document.querySelector('#reset').style.textShadow = "1px 1px rgba(0, 255, 247, 0.5)";
+            document.querySelector('#style').style.textShadow = "1px 1px rgba(0, 255, 247, 0.5)";
+            document.getElementById("app").style.backgroundImage = "none";
+            break;
+        case 2:
+            document.getElementById("app").style.backgroundColor = "white";
+            document.getElementById("app").style.boxShadow = "none";
+            document.getElementById("app").style.borderColor = "black";
+            document.querySelector('h1').style.textShadow = "none";
+            document.querySelector('#message').style.textShadow = "none";
+            document.querySelector('#reset').style.textShadow = "none";
+            document.querySelector('#style').style.textShadow = "none";
+            document.getElementById("app").style.backgroundImage = "none";
+            break;
+        case 3:
+            document.getElementById("app").style.backgroundColor = "black";
+            document.getElementById("app").style.boxShadow = "10px 10px 10px grey";
+            document.getElementById("app").style.borderColor = "grey";
+            document.querySelector('h1').style.textShadow = "2.5px 2.5px grey";
+            document.querySelector('#message').style.textShadow = "2.5px 2.5px grey";
+            document.querySelector('#reset').style.textShadow = "1px 1px grey";
+            document.querySelector('#style').style.textShadow = "1px 1px grey";
+            document.getElementById("app").style.backgroundImage = "none";
+            break;
+        case 4:
+            document.getElementById("app").style.backgroundImage = "linear-gradient(#e66465, #9198e5)";
+            document.getElementById("app").style.boxShadow = "10px 10px 10px rgba(255, 255, 60, 0.5)";
+            document.getElementById("app").style.borderColor = "rgba(255, 255, 60, 0.5)";
+            document.querySelector('h1').style.textShadow = "2.5px 2.5px rgba(250, 250, 250, 0.5)";
+            document.querySelector('#message').style.textShadow = "2.5px 2.5px rgba(250, 250, 250, 0.5)";
+            document.querySelector('#reset').style.textShadow = "1px 1px rgba(250, 250, 250, 0.5)";
+            document.querySelector('#style').style.textShadow = "1px 1px rgba(250, 250, 250, 0.5)";
+    }
 }
